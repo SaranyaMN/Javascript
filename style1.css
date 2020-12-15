@@ -1,0 +1,27 @@
+body{
+    background-repeat: no-repeat;
+    background-size: 100% ;
+}
+h2{
+    text-align: center; 
+    font-weight: bolder;
+   
+}
+table { 
+    border-collapse: collapse; 
+    background-color: rgb(211, 253, 128);
+} 
+th { 
+    background-color:green; 
+    Color:white; 
+} 
+th, td { 
+    width:150px; 
+    text-align:center; 
+    border:1px solid black; 
+    padding:5px; 
+  
+} 
+h1 { 
+    color:green; 
+} 
