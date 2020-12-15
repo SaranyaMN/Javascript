@@ -1,20 +1,14 @@
-let usr=document.getElementById("uname");
-let pwd=document.getElementById("password");
-function validate(usr,pwd,callback){
-//     if(usr.value=='admin'&& pwd.value=="12345"){
-//         callback();
-//     }
-//     else{
-//         alert("Invalid login");
-//     }
-// }
-// validate(use,pwd,display(){
-//     window.setTimeout(display(){
-//         window.location.href="home.html";
-        
-//     }, 3000);
-// });
-if(usr.checkValidity()==true){
-    window.location.href="home.html"; 
-}
-}
+$(document).ready(function() {
+    $("button").click(function() {
+
+        var user = $("#uname").val();
+        var admin = "admin"
+        var pass = "12345";
+        var pas = $("#password").val();
+        if (user == admin && pas == pass) {
+            window.location.href = "home.html";
+        } else {
+            alert("Please check your username or password");
+        }
+    });
+});

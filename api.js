@@ -1,5 +1,6 @@
 
-  var oXHR = new XMLHttpRequest();
+ 
+ var oXHR = new XMLHttpRequest();
 
   // Initiate request.
   oXHR.onreadystatechange = reportStatus;
@@ -62,36 +63,27 @@
             else{
                 tabCell.innerHTML = arr[i][col[j]];
             }
-            var p= new Promise(function(resolve,reject){
-                count = 0;
-                if(checkbox.checked.length==5){
-                // if (checkbox.type=="checkbox"&&checkbox.checked == true){
-                //     var x = $("#chk:checked").length;
-                //     document.getElementById("#chk").innerHTML = x;
-                    count++;
-                    // if(count==5){
-                        resolve(x);
-                    }
-                    else{
-                        reject("Error");
-                    }
-                // }
-            });
-            p.then(function(s){
-                // alert("Number of checked checkboxes: "+checkboxes.length);
-                alert("Congrats. 5 Tasks have been Successfully Completed ");
-            }).catch(function(e){
-                
-            })
-            
+                $('input[type="checkbox"]').click(function() {
+                    let P = new Promise((resolve, reject) => {
+                        if ($("input:checkbox:checked").length % 5 == 0) {
+                            resolve();
+                        } else {
+                            reject();
+                        }
+                    });
 
+                    P.then(() => {
+                        alert("Congrats. 5 Tasks have been Successfully Completed");
+                    }).catch(() => {
+                    })
+                });
+                
+            
+                
       // Finally, add the dynamic table to a container.
       var divContainer = document.getElementById("showTable");
       divContainer.innerHTML = "";
       divContainer.appendChild(table);
-
-    
-   
-}
-}
+    }
+ }
 }
